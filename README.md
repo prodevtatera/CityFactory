@@ -6,6 +6,14 @@ This directory had no application or event pipeline. The pilot is a standalone c
 
 ## Use it
 
+**Routing restriction, 2026-09-18:** never route GPT/OpenAI or Claude/Anthropic through
+OpenRouter, including aliases and fallbacks. Native Codex/OpenAI is allowed. The legacy
+`--compare-astra` option below targets `openai/gpt-6-astra` through OpenRouter and **must not
+be run**. Paired-call examples are retained as historical documentation of the existing
+experiment, not permitted commands. This warning does not disable the option in code;
+[the backlog](docs/backlog.md#cf-006--block-the-prohibited-legacy-astra-route) records that gap.
+Offline reports and mock-based tests do not make model calls.
+
 Run from this directory. The existing `.env` supplies `OPENROUTER_API_KEY`; an environment variable overrides it. Credentials are read as data, never sourced as shell code. `.env` is ignored by Git.
 
 ```sh
@@ -103,9 +111,29 @@ DeepSeek V4.1 Flash via the existing DeepAstra/OpenRouter wrapper drafted the sy
 
 ## Checks
 
+### Development workflow
+
+Project instructions are in [AGENTS.md](AGENTS.md). Adapted from ContentMgmt:
+
+- `/bro` restates the last answer plainly without redoing work.
+- `/backlog` lists open priorities; `/backlog add …` records work; `/backlog done ID` moves
+  verified completed work with its history intact. `/backlog done` shows completed items.
+- `/ship` checks and reviews the scoped work, updates the backlog, commits and pushes main.
+  It does not deploy: Vercel setup is deferred until requested.
+
+The procedures live in [.claude/commands](.claude/commands); Codex follows their mapping in
+AGENTS.md (this does not install global slash-command autocomplete). See [open work](docs/backlog.md)
+and [completed work](docs/backlog_done.md). Copying these files does not execute `/ship`.
+
+### Offline verification
+
 ```sh
+python3 check_docs.py
 python3 -m unittest -v
 ```
+
+When the separately developed `game/` is present, also run `npm --prefix game test`.
+The game and its local PRD are not part of this workflow-only release.
 
 Offline checks cover cost accounting, budget stops, invalid responses, network failures, interrupted requests, conservative routing, feedback, threshold simulations and log privacy. They use no credentials or network calls.
 
