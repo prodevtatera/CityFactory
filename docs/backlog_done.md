@@ -37,3 +37,14 @@ Review evidence is retained privately in `logs/ship-review-20260918T213016Z-7135
 the final document reviews by native Codex and DeepSeek also found no blocking issues.
 The unresolved product-principles idea is recorded as [CF-005](backlog.md#cf-005--decide-which-contentmgmt-product-principles-fit-cityfactory),
 not adopted as project rules. Vercel remains deferred.
+
+## CF-009 — Document City Factory and the approved Jev team experiment
+
+Recorded and completed: 2026-09-18. Retrospective documentation entry; no earlier backlog history is implied.
+Scope: [PRD v0.2](../PRD.md) captures the accepted factory-builder direction, core manufacturing journey, visual references, scope limits, proposed validation targets, and the approved three-character Jev experiment.
+
+Release notes: the PRD now distinguishes accepted direction from proposed details, adds the post-delivery team interaction with six acceptance criteria, and retains source provenance without publishing machine-local paths or internal source documents.
+
+Verification on 2026-09-18: independent native Codex review found no blocking PRD issues and checked the publication-source cleanup. The exact staged documentation snapshot passed `python3 check_docs.py` and all 13 offline Python tests. Game checks and browser checks are not applicable to this documentation-only snapshot; `game/` is excluded. This ship review used native Codex; no additional DeepSeek invocation or paid model call was made for this release.
+
+Excludes: implementing or validating game behavior, proving model quality or player value, and deployment. Remaining core acceptance work is [CF-007](backlog.md#cf-007--validate-the-first-delivery-game-against-the-prd); implementation and evaluation of the team experiment is [CF-008](backlog.md#cf-008--build-and-evaluate-the-approved-jev-team-experiment).
