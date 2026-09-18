@@ -4,6 +4,21 @@ Version 0.2 · 18 September 2026 · Owner: Luis
 
 Status: working PRD grounded in the existing concept discussion. Luis approved the product direction, visual ambition, and the Jev-powered “talk to your factory team” experiment. Detailed mechanics and validation targets remain proposed defaults. A prototype is being built in a separate task. This document defines the intended experience and does not claim that any requirement is implemented or tested.
 
+### Implementation update — 19 September 2026
+
+After v0.2, Luis approved material transport and layout efficiency as the next playable lesson.
+The current [game](game/README.md#material-flow--19-september-2026) uses a fixed 300-carton order,
+100-carton batches and 200-carton trucks, with actual inventory, partial shipments, automatic
+clear-path routing, free paused relocation and retries. These tuning values supersede the
+provisional 100-carton mission quantity below. Machine rates stay constant; distance affects
+transport and waiting. This update also brings layout-related waiting forward from the later
+lessons mentioned below; capacity upgrades remain deferred.
+
+This is a scoped implementation milestone, not completion of this PRD. The guided packaging
+shortage, learning/visual playtest and Jev team experiment remain open in
+[CF-007](docs/backlog.md#cf-007--validate-the-first-delivery-game-against-the-prd) and
+[CF-008](docs/backlog.md#cf-008--build-and-evaluate-the-approved-jev-team-experiment).
+
 ## 1. Product vision
 
 **Build a beautiful little factory, bring it to life, and learn how manufacturing works by fulfilling your first order.**

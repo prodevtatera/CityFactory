@@ -1,8 +1,15 @@
-# CityFactory — JevAstra pilot
+# CityFactory
+
+The playable factory builder is in [game/](game/README.md): build a syrup factory and fulfil
+a 300-carton order with material transport, quality release and truck loading. See the
+[product requirements](PRD.md) and [remaining acceptance work](docs/backlog.md#cf-007--validate-the-first-delivery-game-against-the-prd).
+The game runs locally; no hosted deployment is configured.
+
+## Separate JevAstra pilot
 
 An observation-only experiment: Jev assesses whether a software-project event needs an engineer's attention. Optionally, Astra evaluates the same event so we can compare decisions, latency and actual API charges. Python 3.10+ on macOS/Linux; no pip packages, service, database or UI.
 
-This directory had no application or event pipeline. The pilot is a standalone command and importable `evaluate()` function. It does **not** intercept this Codex conversation, automatically route future tasks, write application code, or suppress work. Astra in this pilot produces a triage verdict, not a full coding-agent run.
+When the pilot was created, this directory had no application or event pipeline. The pilot is a standalone command and importable `evaluate()` function. It does **not** intercept this Codex conversation, automatically route future tasks, write application code, or suppress work. Astra in this pilot produces a triage verdict, not a full coding-agent run.
 
 ## Use it
 
@@ -132,8 +139,8 @@ python3 check_docs.py
 python3 -m unittest -v
 ```
 
-When the separately developed `game/` is present, also run `npm --prefix game test`.
-The game and its local PRD are not part of this workflow-only release.
+Also run `npm --prefix game test` for the browser game. The earlier workflow-only release
+excluded it; the initial playable game is now included, with evidence in [its README](game/README.md).
 
 Offline checks cover cost accounting, budget stops, invalid responses, network failures, interrupted requests, conservative routing, feedback, threshold simulations and log privacy. They use no credentials or network calls.
 

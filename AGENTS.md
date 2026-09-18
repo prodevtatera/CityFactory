@@ -1,7 +1,7 @@
 # CityFactory development
 
-The browser game is being developed separately in local `game/` and `PRD.md` files;
-they are not included in this workflow-only release.
+The browser game is in `game/`; [its README](game/README.md) describes the implemented
+learning challenge. [PRD.md](PRD.md) also includes requirements not yet implemented.
 The root Python code is a separate, observation-only JevAstra experiment; see
 [README.md](README.md). Do not connect it to game development or claim savings
 without an explicit implementation request and measured evidence.

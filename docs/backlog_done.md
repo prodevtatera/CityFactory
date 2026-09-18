@@ -48,3 +48,41 @@ Release notes: the PRD now distinguishes accepted direction from proposed detail
 Verification on 2026-09-18: independent native Codex review found no blocking PRD issues and checked the publication-source cleanup. The exact staged documentation snapshot passed `python3 check_docs.py` and all 13 offline Python tests. Game checks and browser checks are not applicable to this documentation-only snapshot; `game/` is excluded. This ship review used native Codex; no additional DeepSeek invocation or paid model call was made for this release.
 
 Excludes: implementing or validating game behavior, proving model quality or player value, and deployment. Remaining core acceptance work is [CF-007](backlog.md#cf-007--validate-the-first-delivery-game-against-the-prd); implementation and evaluation of the team experiment is [CF-008](backlog.md#cf-008--build-and-evaluate-the-approved-jev-team-experiment).
+
+## CF-010 — Playable factory and material-flow challenge
+
+Recorded and completed locally: 2026-09-19. Retrospective entry for this task's implementation;
+no earlier backlog history is implied. Publication is handled by the requested ship workflow.
+
+Release notes:
+
+- Build a syrup factory from seven large modules in an interactive 3D landscape with a classic toolbox.
+- Fulfil a 300-carton order through real ingredient/packaging inventories, clear material paths,
+  three quality-released batches and capacity-limited trucks, including partial shipments.
+- Compare delivery and waiting times, pause to relocate modules for free, retry the same order,
+  and resume saved progress. Placement checks prevent overlapping buildings and blocked access.
+
+Evidence and coverage: [game README](../game/README.md#material-flow--19-september-2026),
+[simulation checks](../game/simulation.test.mjs), and [terrain checks](../game/art.test.mjs).
+The 2026-09-19 browser journey covered 300 delivered cartons over three shipments, a partial
+93-carton dispatch, all three quality gates, free paused relocation, save/reload, retry, and
+an invalid dock rotation. The automated layout comparison changes transport time while
+keeping machine rates fixed; measured values and procedure are in the game README.
+
+Excludes: hosted deployment, learner validation, photorealistic concept fidelity, the guided
+shortage event, advanced capacity/traffic simulation and the Jev team experiment. Remaining
+first-experience acceptance is kept in [CF-007](backlog.md#cf-007--validate-the-first-delivery-game-against-the-prd),
+the team experiment in [CF-008](backlog.md#cf-008--build-and-evaluate-the-approved-jev-team-experiment),
+and deployment in [CF-003](backlog.md#cf-003--set-up-vercel-when-requested).
+
+Ship verification, 2026-09-19: the independent native Codex review identified a normal-frame-rate
+save/reload defect; the counter fix and legacy-save compatibility were independently verified.
+The exact staged tree passed document links/instruction limits, 13 Python tests, 23 simulation
+checks and terrain checks, with the pinned dependency installed from the offline npm cache.
+No existing backlog item was moved: CF-007 retains its unmet acceptance criteria; CF-010
+records only the completed scope above.
+
+The additional DeepSeek documentation pass was invoked through DeepAstra with verified model
+`deepseek/deepseek-v4.1-flash` on OpenRouter, then stopped before its final review. No findings
+from that incomplete pass were used; its dollar charge is unknown. Native Codex provided the
+completed independent release review.

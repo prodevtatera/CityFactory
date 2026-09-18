@@ -1,0 +1,12 @@
+{
+  "name": "cityfactory",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "python3 -m http.server 4173 --bind 127.0.0.1",
+    "test": "node simulation.test.mjs && node art.test.mjs"
+  },
+  "dependencies": {
+    "three": "0.180.0"
+  }
+}

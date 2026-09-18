@@ -1,0 +1,5 @@
+# Scene texture
+
+`meadow.png` was generated with the native OpenAI image tool on 2026-09-18, then copied into this workspace. It is used as a repeating ground texture, not as a background screenshot. The game requires no image API at runtime.
+
+Prompt: "Use case: stylized-concept. Asset type: seamless tileable PBR base-color ground texture for a real-time 3D factory-building game. Create one square high-resolution natural meadow grass texture viewed perfectly straight down, orthographic, flat diffuse evenly lit albedo photograph. Fine short green grass blades, small organic patches of slightly dry golden grass, tiny clover-like details, rich moss and olive greens, visually realistic. The surface is mostly fine grass, not giant blades. Uniform scale throughout. Seamlessly tileable edges, low-frequency variation restrained. No perspective, no horizon, no objects, no rocks, no flowers, no trees, no text, no labels, no UI, no cast shadows, no directional light, no vignette. This will be repeated across a large sunlit terrain in a 3D game."

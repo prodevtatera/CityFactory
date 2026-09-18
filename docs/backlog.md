@@ -60,7 +60,18 @@ Excludes: importing video-business restrictions or treating enthusiasm as approv
 ## CF-007 — Validate the first-delivery game against the PRD
 
 Added: 2026-09-18. Priority: P1 — the first useful game milestone and prerequisite for the team experiment.
-Status: open; this documentation task does not certify the separate game implementation.
+Status: partially verified on 2026-09-19; remains open. The scoped material-flow prototype is
+recorded in [CF-010](backlog_done.md#cf-010--playable-factory-and-material-flow-challenge).
+Its tested 300-carton order, 100-carton batches, 200-carton trucks, material accounting,
+layout-dependent travel, quality release, partial dispatch, pause/relocation, retry and
+save/reload resolve those implementation portions. The user-approved efficiency lesson
+supersedes the earlier provisional 100-carton mission default.
+
+Remaining P1 scope: implement the guided packaging-shortage/replenishment journey, run the
+proposed learner playtest, validate supported desktop hardware/browser performance, and
+review the visual gap against the approved concepts. The game remains stylized; visual
+acceptance and learning value have not been established by automated checks. P1 stays
+appropriate because these are the remaining first-experience acceptance gaps.
 
 Scope: assess the current prototype against [PRD sections 4–9 and 12](../PRD.md#7-functional-requirements-and-acceptance-criteria), close verified gaps, and record evidence. Resolve syrup identity, recipe quantities/units, production timings, order size, target browsers/hardware, and visual fidelity during prototype review.
 
